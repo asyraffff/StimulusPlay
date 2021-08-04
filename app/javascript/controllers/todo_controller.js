@@ -27,6 +27,7 @@ export default class extends Controller {
       "csrf-token"
     )[0].content;
 
+    // CSRF token header
     // getMetaValue("csrf-token")
 
     // function getMetaValue(name) {
