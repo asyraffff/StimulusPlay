@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Todos</h1>
+
+<table>
+  <% @todos.each do |todo| %>
+    <tr data-controller="todo"
+          data-todo-update-url="<%= todo_path(todo) %>">
+      <td>
+        <input type="checkbox"
+                    data-action="todo#toggle"
+                    data-target="todo.completed"
+                    <% if todo.completed %> checked <% end %> >
+        <%= todo.title %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+<br>
+
+<%= link_to 'New Todo', new_todo_path %>
